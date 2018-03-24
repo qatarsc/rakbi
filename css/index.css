@@ -110,7 +110,7 @@ li {
   100% {transform: scale(1);}
 }
 
-#heart img.bottom { 
+#heart_img { 
   animation-name: heartFadeInOut; 
   animation-iteration-count: infinite;
   animation-duration: 2s;

@@ -84,16 +84,16 @@ $( document ).ready(function() {
 
 	function update2() {
       if(slider_val > slider_val_final){
-      	slider_val_final = slider_val_final + 30;
+      	slider_val_final = slider_val_final + 20;
       }
       if(slider_val < slider_val_final){
-      	slider_val_final = slider_val_final - 10;
+      	slider_val_final = slider_val_final - 20;
       }
       var bpm = 90 + (slider_val_final/500 * (180-90));
 	  $("#bpm_val").text(Math.round(bpm));
 
 	  var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
-	  $("#heart img.bottom").css("animation-duration", heart_speed + "s");
+	  $("#heart_img").css("animation-duration", heart_speed + "s");
 
 	  var camel_speed = slider_val_final/500 * 55;
 	  $("#camel_speed").text(Math.round(camel_speed));
@@ -113,6 +113,8 @@ $( document ).ready(function() {
 	  if(!hitting){
 	  	hitting = true;
 	  	$("#hit").text("Stop Hitting");
+	  	$("#hit").removeClass("btn-success");
+	  	$("#hit").addClass("btn-danger");
 	  	if (timer2 != null){
 	      	clearInterval(timer2);
 	      	timer2 = null;
@@ -122,6 +124,8 @@ $( document ).ready(function() {
 	  else{
 	  	hitting = false;
 	  	$("#hit").text("Start Hitting");
+	  	$("#hit").removeClass("btn-danger");
+	  	$("#hit").addClass("btn-success");
 	  	if (timer !== null){
 	      	clearInterval(timer);
 	      	timer = null;
@@ -131,7 +135,17 @@ $( document ).ready(function() {
 	      	timer2 = null;
 	    }
 	    var slider_val = 0;
-		var slider_val_final = 0; 
+		var slider_val_final = 0;
+
+		var bpm = 90 + (slider_val_final/500 * (180-90));
+		$("#bpm_val").text(Math.round(bpm));
+
+		var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
+		$("#heart_img").css("animation-duration", heart_speed + "s");
+
+		var camel_speed = slider_val_final/500 * 55;
+		$("#camel_speed").text(Math.round(camel_speed)); 
+
 	  }
     });
 
