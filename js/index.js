@@ -3,6 +3,7 @@ $( document ).ready(function() {
 	console.log( "ready!" );
     
 	var slider_val = 0;
+	var slider_val_final = 0;
 
     // Slider
     $('#ex1').slider({
@@ -29,6 +30,8 @@ $( document ).ready(function() {
 
 	var speed = 10;
 	var timer = null;
+	var timer2 = null;
+	var hitting = false;
 
 	/**
 	* Clears the canvas.
@@ -67,7 +70,7 @@ $( document ).ready(function() {
 
 	}
 
-	function update(){
+	function update() {
 		if(marker.index < path.length - 1){
 			marker.index = marker.index + 1;
 		}
@@ -79,27 +82,62 @@ $( document ).ready(function() {
 		redraw()
 	}
 
+	function update2() {
+      if(slider_val > slider_val_final){
+      	slider_val_final = slider_val_final + 30;
+      }
+      if(slider_val < slider_val_final){
+      	slider_val_final = slider_val_final - 10;
+      }
+      var bpm = 90 + (slider_val_final/500 * (180-90));
+	  $("#bpm_val").text(Math.round(bpm));
+
+	  var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
+	  $("#heart img.bottom").css("animation-duration", heart_speed + "s");
+
+	  var camel_speed = slider_val_final/500 * 55;
+	  $("#camel_speed").text(Math.round(camel_speed));
+
+	  if (timer !== null){
+      	clearInterval(timer);
+      	timer = null;
+      }
+      timer = setInterval(update, 550 - slider_val);
+
+    }
+
 
 	$("#hit").click(function() {
 	  console.log("hit!");
 
-	  var bpm = 90 + (slider_val/500 * (180-90));
-	  $("#bpm_val").text(bpm);
-
-	  var heart_speed = 2.5 - (slider_val/500 * 2.3);
-	  $("#heart img.bottom").css("animation-duration", heart_speed + "s");
-
-	  var camel_speed = slider_val/500 * 55;
-	  $("#camel_speed").text(camel_speed);
-
-      if (timer !== null){
-      	clearInterval(timer);
-      	timer = null;
-      }
-      timer = setInterval(update, 550 - slider_val); 
+	  if(!hitting){
+	  	hitting = true;
+	  	$("#hit").text("Stop Hitting");
+	  	if (timer2 != null){
+	      	clearInterval(timer2);
+	      	timer2 = null;
+	    } 
+	    timer2 = setInterval(update2, 500);
+	  }
+	  else{
+	  	hitting = false;
+	  	$("#hit").text("Start Hitting");
+	  	if (timer !== null){
+	      	clearInterval(timer);
+	      	timer = null;
+	    }
+	    if (timer2 != null){
+	      	clearInterval(timer2);
+	      	timer2 = null;
+	    }
+	    var slider_val = 0;
+		var slider_val_final = 0; 
+	  }
     });
 
     setTimeout(redraw, 500);
+
+    
 
 
 
