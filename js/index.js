@@ -94,6 +94,7 @@ $( document ).ready(function() {
 
 	  var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
 	  $("#heart_img").css("animation-duration", heart_speed + "s");
+	  $(".mobile-detail #heart_img").css("animation-duration", heart_speed + "s");
 
 	  var camel_speed = slider_val_final/500 * 55;
 	  $("#camel_speed").text(Math.round(camel_speed));
@@ -142,6 +143,7 @@ $( document ).ready(function() {
 
 		var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
 		$("#heart_img").css("animation-duration", heart_speed + "s");
+		$(".mobile-detail #heart_img").css("animation-duration", heart_speed + "s");
 
 		var camel_speed = slider_val_final/500 * 55;
 		$("#camel_speed").text(Math.round(camel_speed)); 
