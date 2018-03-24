@@ -1,0 +1,149 @@
+html, body {
+      height:100%;
+    }
+body {
+  background-color: #2E5090;
+  /*display:flex;*/
+  /*align-items:center;*/
+}
+
+#main_container{
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  padding-top: 56px;
+  /*padding-bottom: 56px;*/
+}
+
+.card {
+  width: 100vw;
+  border-radius: 0rem;
+}
+
+.card-body {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.card_col {
+  width: 100vw;
+}
+
+ul {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    /*background: #cacaca;*/
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+    background: #fafafa;
+}
+
+.row{
+  margin: 0px;
+}
+
+.live__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.live__scroll .row{
+  display:block;
+}
+.live__scroll .live__scroll--box {
+  display: inline-block;
+  float: none;
+  padding: 5px;
+  /*border: 1px solid red;*/
+}
+.item_box{
+  margin-bottom: 15px;
+}
+
+.list-group-item{
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.list-inline-item.active {
+  background-color: rgba(0,0,0,.0);
+}
+
+.item_box>.card-header{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.item_box>.card-body{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.item_box>.card-footer{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*Heart Animation*/
+#heart img{
+  position:absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+ }
+
+ @keyframes heartFadeInOut {
+  0% {transform: scale(1);}
+  25% {transform: scale(.97);}
+  35% {transform: scale(.9);}
+  45% {transform: scale(1.1);}
+  55% {transform: scale(.9);}
+  65% {transform: scale(1.1);}
+  75% {transform: scale(1.03);}
+  100% {transform: scale(1);}
+}
+
+#heart img.bottom { 
+  animation-name: heartFadeInOut; 
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+#heart_box {
+  height: 100px;
+}
+
+#bpm {
+  color: red;
+}
+
+#speed{
+  display: flex;
+  align-items: center;
+  border-left: 2px solid rgba(0,0,0,.125)
+}
+
+/*#track_canvas {
+  height: 500px;
+  width: 500px;
+}*/
+
+#ex1Slider .slider-selection {
+  background: #BABABA;
+}
+
+#logo {
+  height: 45px;
+  width: 45px;
+}
+
+#logo_link {
+  padding: 0px;
+}
