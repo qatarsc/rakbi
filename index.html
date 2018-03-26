@@ -37,7 +37,7 @@
     <nav class="navbar navbar-expand navbar-light bg-light fixed-top justify-content-center">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="material-icons">help</i></a>
+          <a class="nav-link" href="" data-toggle="modal" data-target="#myModal1"><i class="material-icons">help</i></a>
         </li>
         <li class="nav-item">
           <a id="logo_link" class="nav-link" href="#">
@@ -46,7 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="material-icons">settings</i></a>
+          <a class="nav-link" href="" data-toggle="modal" data-target="#myModal2"><i class="material-icons">settings</i></a>
         </li>
       </ul>
     </nav>
@@ -122,6 +122,56 @@
               <button type="button" id="hit" class="btn btn-danger btn-md btn-block">Stop</button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="modal fade" id="myModal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Information</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            No information is available yet.
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="myModal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Settings</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            No setting is available yet.
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
         </div>
       </div>
     </div>
