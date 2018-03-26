@@ -5,13 +5,6 @@ $( document ).ready(function() {
 	var slider_val = 0;
 	var slider_val_final = 0;
 
-    // Slider
-    $('#ex1').slider({
-		formatter: function(value) {
-			slider_val = value;
-		}
-	});
-
 	var context = document.querySelector("canvas").getContext("2d");
 	var canvasWidth = 300;
 	var canvasHeight = 150;
@@ -32,6 +25,7 @@ $( document ).ready(function() {
 	var timer = null;
 	var timer2 = null;
 	var hitting = false;
+	var speed_slider = null;
 
 	/**
 	* Clears the canvas.
@@ -111,45 +105,59 @@ $( document ).ready(function() {
 	$("#hit").click(function() {
 	  console.log("hit!");
 
-	  if(!hitting){
-	  	hitting = true;
-	  	$("#hit").text("Stop Hitting");
-	  	$("#hit").removeClass("btn-success");
-	  	$("#hit").addClass("btn-danger");
-	  	if (timer2 != null){
-	      	clearInterval(timer2);
-	      	timer2 = null;
-	    } 
-	    timer2 = setInterval(update2, 500);
-	  }
-	  else{
-	  	hitting = false;
-	  	$("#hit").text("Start Hitting");
-	  	$("#hit").removeClass("btn-danger");
-	  	$("#hit").addClass("btn-success");
-	  	if (timer !== null){
-	      	clearInterval(timer);
-	      	timer = null;
-	    }
-	    if (timer2 != null){
-	      	clearInterval(timer2);
-	      	timer2 = null;
-	    }
-	    var slider_val = 0;
-		var slider_val_final = 0;
+	  // if(!hitting){
+	  // 	hitting = true;
+	  // 	$("#hit").text("Stop Hitting");
+	  // 	$("#hit").removeClass("btn-success");
+	  // 	$("#hit").addClass("btn-danger");
+	  // 	if (timer2 != null){
+	  //     	clearInterval(timer2);
+	  //     	timer2 = null;
+	  //   } 
+	  //   timer2 = setInterval(update2, 500);
+	  // }
+	  // else{
+	  // 	hitting = false;
+	  // 	$("#hit").text("Start Hitting");
+	  // 	$("#hit").removeClass("btn-danger");
+	  // 	$("#hit").addClass("btn-success");
+	  	// if (timer !== null){
+	   //    	clearInterval(timer);
+	   //    	timer = null;
+	   //  }
+	   //  if (timer2 != null){
+	   //    	clearInterval(timer2);
+	   //    	timer2 = null;
+	   //  }
+	 //    var slider_val = 0;
+		// var slider_val_final = 0;
 
-		var bpm = 90 + (slider_val_final/500 * (180-90));
-		$("#bpm_val").text(Math.round(bpm));
+		// var bpm = 90 + (slider_val_final/500 * (180-90));
+		// $("#bpm_val").text(Math.round(bpm));
 
-		var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
-		$("#heart_img").css("animation-duration", heart_speed + "s");
-		$(".mobile-detail #heart_img").css("animation-duration", heart_speed + "s");
+		// var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
+		// $("#heart_img").css("animation-duration", heart_speed + "s");
+		// $(".mobile-detail #heart_img").css("animation-duration", heart_speed + "s");
 
-		var camel_speed = slider_val_final/500 * 55;
-		$("#camel_speed").text(Math.round(camel_speed)); 
+		// var camel_speed = slider_val_final/500 * 55;
+		// $("#camel_speed").text(Math.round(camel_speed)); 
 
-	  }
+		speed_slider.slider('setValue', 0);
+
+	  // }
     });
+
+    // Slider
+    speed_slider = $('#ex1').slider({
+		formatter: function(value) {
+			slider_val = value;
+			if (timer2 != null){
+		      	clearInterval(timer2);
+		      	timer2 = null;
+		    } 
+		    timer2 = setInterval(update2, 500);
+		}
+	});
 
     setTimeout(redraw, 500);
 
