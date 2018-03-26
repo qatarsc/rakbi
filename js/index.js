@@ -26,6 +26,7 @@ $( document ).ready(function() {
 	var timer2 = null;
 	var hitting = false;
 	var speed_slider = null;
+	var camel_angle = 0;
 
 	/**
 	* Clears the canvas.
@@ -43,36 +44,126 @@ $( document ).ready(function() {
 		// console.log('redrawing');
 		clearCanvas();
 
-		// Track
+		// Old Track
 		
-		if(path.length > 0){
+		// if(path.length > 0){
 
-			for(var i=1; i < path.length; i++){
-			   // console.log("x:", path[i][0], "y: ", path[i][1]);
-			   context.beginPath();
-			   context.moveTo(path[i-1][0], path[i-1][1]);
-			   context.lineTo(path[i][0], path[i][1]);
-			   context.closePath();
-			   context.lineJoin = "round";
-			   context.lineWidth = 3;
-			   context.stroke();
-			}
+		// 	for(var i=1; i < path.length; i++){
+		// 	   // console.log("x:", path[i][0], "y: ", path[i][1]);
+		// 	   context.beginPath();
+		// 	   context.moveTo(path[i-1][0], path[i-1][1]);
+		// 	   context.lineTo(path[i][0], path[i][1]);
+		// 	   context.closePath();
+		// 	   context.lineJoin = "round";
+		// 	   context.lineWidth = 3;
+		// 	   context.stroke();
+		// 	}
 
-			context.drawImage(marker.Sprite, marker.XPos, marker.YPos - 50, marker.Width, marker.Height);
+		// 	context.drawImage(marker.Sprite, marker.XPos, marker.YPos - 50, marker.Width, marker.Height);
 
-		}
+		// }
+		
+
+		// Track
+		//outer circle
+		context.beginPath();
+		context.ellipse(150, 80, 120, 60, 0, 0, 2 * Math.PI);
+		context.fillStyle = "black";
+		context.closePath();
+		context.fill();
+
+		//inner circle
+		context.beginPath();
+		context.ellipse(150, 80, 100, 45, 0, 0, 2 * Math.PI);
+		context.fillStyle = "white";
+		context.closePath();
+		context.fill();
+
+		//dotted path
+		context.save();
+		context.beginPath();
+		context.ellipse(150, 80, 110, 52.5, 0, 0, 2 * Math.PI);
+		context.closePath();
+		context.setLineDash([5,5]);
+		context.strokeStyle = "yellow";
+		context.lineWidth = 2;
+		context.stroke();
+		context.restore();
+
+		//start line
+		context.beginPath();
+		context.moveTo(250, 80);
+		context.lineTo(270, 80);
+		context.strokeStyle = "white";
+		context.lineWidth = 3;
+		context.stroke();
+
+		//texts
+		context.font = "12px Arial";
+		context.fillStyle = 'black';
+		context.fillText("Start",280,85);
+
+		var angle = (2 * Math.PI) / 6000 * 1000;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("1km", x, y);
+
+		var angle = (2 * Math.PI) / 6000 * 2000;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("2km", x, y);
+
+		var angle = (2 * Math.PI) / 6000 * 3000;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("3km", x, y);
+
+		var angle = (2 * Math.PI) / 6000 * 4000;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("4km", x, y);
+
+		var angle = (2 * Math.PI) / 6000 * 5000;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("5km", x, y);
+
+		context.font = "10px Arial";
+		var angle = (2 * Math.PI) / 6000 * 5500;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("500m", x, y);
+
+		var angle = (2 * Math.PI) / 6000 * 5750;
+		var x = 140 + (140 * Math.cos(angle));
+		var y = 85 + (75 * Math.sin(angle));
+		context.fillText("250m", x, y);
+
+
+
+		// Camel
+		var x = 150 + (110 * Math.cos(camel_angle));
+		var y = 80 + (52.5 * Math.sin(camel_angle));
+
+		context.beginPath();
+		context.ellipse(x, y, 7, 7, 0, 0, 2 * Math.PI);
+		context.fillStyle = "red";
+		context.closePath();
+		context.fill();
 
 	}
 
 	function update() {
-		if(marker.index < path.length - 1){
-			marker.index = marker.index + 1;
-		}
-		else{
-			marker.index = 0;
-		}
-		marker.XPos = path[marker.index][0];
-		marker.YPos = path[marker.index][1];
+		// if(marker.index < path.length - 1){
+		// 	marker.index = marker.index + 1;
+		// }
+		// else{
+		// 	marker.index = 0;
+		// }
+		// marker.XPos = path[marker.index][0];
+		// marker.YPos = path[marker.index][1];
+		
+		camel_angle += 0.02;
 		redraw()
 	}
 
