@@ -194,7 +194,7 @@ $( document ).ready(function() {
 
 
 	$("#hit").click(function() {
-	  console.log("hit!");
+	  console.log("stop!");
 
 	  // if(!hitting){
 	  // 	hitting = true;
@@ -233,7 +233,10 @@ $( document ).ready(function() {
 		// var camel_speed = slider_val_final/500 * 55;
 		// $("#camel_speed").text(Math.round(camel_speed)); 
 
-		speed_slider.slider('setValue', 0);
+		// speed_slider.slider('setValue', 0);
+		slider_val = 0;
+		$(".speed_btns").removeClass("btn-success");
+        $(".speed_btns").addClass("btn-primary");
 
 	  // }
     });
@@ -248,6 +251,50 @@ $( document ).ready(function() {
 		    } 
 		    timer2 = setInterval(update2, 500);
 		}
+	});
+
+	$("#spd1").click(function() {
+	  console.log("spd1!");
+	  slider_val = 167;
+	  if (timer2 != null){
+        	clearInterval(timer2);
+        	timer2 = null;
+      } 
+      timer2 = setInterval(update2, 500);
+
+      $(".speed_btns").removeClass("btn-success");
+      $(".speed_btns").addClass("btn-primary");
+      $("#spd1").removeClass("btn-primary");
+      $("#spd1").addClass("btn-success");
+
+	});
+
+	$("#spd2").click(function() {
+	  console.log("spd2!");
+	  slider_val = 334;
+	  if (timer2 != null){
+        	clearInterval(timer2);
+        	timer2 = null;
+      } 
+      timer2 = setInterval(update2, 500);
+      $(".speed_btns").removeClass("btn-success");
+      $(".speed_btns").addClass("btn-primary");
+      $("#spd2").removeClass("btn-primary");
+      $("#spd2").addClass("btn-success");
+	});
+
+	$("#spd3").click(function() {
+	  console.log("spd3!");
+	  slider_val = 501;
+	  if (timer2 != null){
+        	clearInterval(timer2);
+        	timer2 = null;
+      } 
+      timer2 = setInterval(update2, 500);
+      $(".speed_btns").removeClass("btn-success");
+      $(".speed_btns").addClass("btn-primary");
+      $("#spd3").removeClass("btn-primary");
+      $("#spd3").addClass("btn-success");
 	});
 
     setTimeout(redraw, 500);
