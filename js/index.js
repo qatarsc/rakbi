@@ -235,8 +235,8 @@ $( document ).ready(function() {
 
 		// speed_slider.slider('setValue', 0);
 		slider_val = 0;
-		$(".speed_btns").removeClass("btn-success");
-        $(".speed_btns").addClass("btn-primary");
+		$(".speed_btns").removeClass("active");
+  //       $(".speed_btns").addClass("btn-primary");
 
 	  // }
     });
@@ -262,10 +262,10 @@ $( document ).ready(function() {
       } 
       timer2 = setInterval(update2, 500);
 
-      $(".speed_btns").removeClass("btn-success");
-      $(".speed_btns").addClass("btn-primary");
-      $("#spd1").removeClass("btn-primary");
-      $("#spd1").addClass("btn-success");
+      $(".speed_btns").removeClass("active");
+      // $(".speed_btns").addClass("btn-primary");
+      // $("#spd1").removeClass("btn-primary");
+      $("#spd1").addClass("active");
 
 	});
 
@@ -277,10 +277,10 @@ $( document ).ready(function() {
         	timer2 = null;
       } 
       timer2 = setInterval(update2, 500);
-      $(".speed_btns").removeClass("btn-success");
-      $(".speed_btns").addClass("btn-primary");
-      $("#spd2").removeClass("btn-primary");
-      $("#spd2").addClass("btn-success");
+      $(".speed_btns").removeClass("active");
+      // $(".speed_btns").addClass("btn-primary");
+      // $("#spd2").removeClass("btn-primary");
+      $("#spd2").addClass("active");
 	});
 
 	$("#spd3").click(function() {
@@ -291,10 +291,10 @@ $( document ).ready(function() {
         	timer2 = null;
       } 
       timer2 = setInterval(update2, 500);
-      $(".speed_btns").removeClass("btn-success");
-      $(".speed_btns").addClass("btn-primary");
-      $("#spd3").removeClass("btn-primary");
-      $("#spd3").addClass("btn-success");
+      $(".speed_btns").removeClass("active");
+      // $(".speed_btns").addClass("btn-primary");
+      // $("#spd3").removeClass("btn-primary");
+      $("#spd3").addClass("active");
 	});
 
     setTimeout(redraw, 500);
