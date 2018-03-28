@@ -164,7 +164,7 @@ $( document ).ready(function() {
 		// marker.YPos = path[marker.index][1];
 		
 		camel_angle += 0.02;
-		redraw()
+		redraw();
 	}
 
 	function update2() {
@@ -191,7 +191,7 @@ $( document ).ready(function() {
       timer = setInterval(update, 550 - slider_val);
 
     }
-
+    
 
 	$("#hit").click(function() {
 	  console.log("stop!");
