@@ -147,3 +147,97 @@ li {
 #logo_link {
   padding: 0px;
 }
+
+@-webkit-keyframes glowing-red {
+  0% { background-color: #dc3545; -webkit-box-shadow: 0 0 3px #dc3545; }
+  50% { background-color: #FFA8AB; -webkit-box-shadow: 0 0 10px #FFA8AB; }
+  100% { background-color: #dc3545; -webkit-box-shadow: 0 0 3px #dc3545; }
+}
+
+@-moz-keyframes glowing-red {
+  0% { background-color: #dc3545; -moz-box-shadow: 0 0 3px #dc3545; }
+  50% { background-color: #FFA8AB; -moz-box-shadow: 0 0 10px #FFA8AB; }
+  100% { background-color: #dc3545; -moz-box-shadow: 0 0 3px #dc3545; }
+}
+
+@-o-keyframes glowing-red {
+  0% { background-color: #dc3545; box-shadow: 0 0 3px #dc3545; }
+  50% { background-color: #FFA8AB; box-shadow: 0 0 10px #FFA8AB; }
+  100% { background-color: #dc3545; box-shadow: 0 0 3px #dc3545; }
+}
+
+@keyframes glowing-red {
+  0% { background-color: #dc3545; box-shadow: 0 0 3px #dc3545; }
+  50% { background-color: #FFA8AB; box-shadow: 0 0 10px #FFA8AB; }
+  100% { background-color: #dc3545; box-shadow: 0 0 3px #dc3545; }
+}
+
+.btn-danger.flash {
+  -webkit-animation: glowing-red 1500ms infinite;
+  -moz-animation: glowing-red 1500ms infinite;
+  -o-animation: glowing-red 1500ms infinite;
+  animation: glowing-red 1500ms infinite;
+}
+
+@-webkit-keyframes glowing-yellow {
+  0% { background-color: #ffc107; -webkit-box-shadow: 0 0 3px #ffc107; }
+  50% { background-color: #FFEDB0; -webkit-box-shadow: 0 0 10px #FFEDB0; }
+  100% { background-color: #ffc107; -webkit-box-shadow: 0 0 3px #ffc107; }
+}
+
+@-moz-keyframes glowing-yellow {
+  0% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #ffc107; }
+  50% { background-color: #FFEDB0; -moz-box-shadow: 0 0 10px #FFEDB0; }
+  100% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #ffc107; }
+}
+
+@-o-keyframes glowing-yellow {
+  0% { background-color: #ffc107; box-shadow: 0 0 3px #ffc107; }
+  50% { background-color: #FFEDB0; box-shadow: 0 0 10px #FFEDB0; }
+  100% { background-color: #ffc107; box-shadow: 0 0 3px #ffc107; }
+}
+
+@keyframes glowing-yellow {
+  0% { background-color: #ffc107; box-shadow: 0 0 3px #ffc107; }
+  50% { background-color: #FFEDB0; box-shadow: 0 0 10px #FFEDB0; }
+  100% { background-color: #ffc107; box-shadow: 0 0 3px #ffc107; }
+}
+
+.btn-warning.flash {
+  -webkit-animation: glowing-yellow 1500ms infinite;
+  -moz-animation: glowing-yellow 1500ms infinite;
+  -o-animation: glowing-yellow 1500ms infinite;
+  animation: glowing-yellow 1500ms infinite;
+}
+
+@-webkit-keyframes glowing-green {
+  0% { background-color: #28a745; -webkit-box-shadow: 0 0 3px #28a745; }
+  50% { background-color: #86FF96; -webkit-box-shadow: 0 0 10px #86FF96; }
+  100% { background-color: #28a745; -webkit-box-shadow: 0 0 3px #28a745; }
+}
+
+@-moz-keyframes glowing-green {
+  0% { background-color: #28a745; -moz-box-shadow: 0 0 3px #28a745; }
+  50% { background-color: #86FF96; -moz-box-shadow: 0 0 10px #86FF96; }
+  100% { background-color: #28a745; -moz-box-shadow: 0 0 3px #28a745; }
+}
+
+@-o-keyframes glowing-green {
+  0% { background-color: #28a745; box-shadow: 0 0 3px #28a745; }
+  50% { background-color: #86FF96; box-shadow: 0 0 10px #86FF96; }
+  100% { background-color: #28a745; box-shadow: 0 0 3px #28a745; }
+}
+
+@keyframes glowing-green {
+  0% { background-color: #28a745; box-shadow: 0 0 3px #28a745; }
+  50% { background-color: #86FF96; box-shadow: 0 0 10px #86FF96; }
+  100% { background-color: #28a745; box-shadow: 0 0 3px #28a745; }
+}
+
+.btn-success.flash {
+  -webkit-animation: glowing-green 1500ms infinite;
+  -moz-animation: glowing-green 1500ms infinite;
+  -o-animation: glowing-green 1500ms infinite;
+  animation: glowing-green 1500ms infinite;
+}
+

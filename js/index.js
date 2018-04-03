@@ -106,12 +106,12 @@ $( document ).ready(function() {
 		var angle = (2 * Math.PI) / 6000 * 1000;
 		var x = 140 + (140 * Math.cos(angle));
 		var y = 85 + (75 * Math.sin(angle));
-		context.fillText("1km", x, y);
+		context.fillText("5km", x, y);
 
 		var angle = (2 * Math.PI) / 6000 * 2000;
 		var x = 140 + (140 * Math.cos(angle));
 		var y = 85 + (75 * Math.sin(angle));
-		context.fillText("2km", x, y);
+		context.fillText("4km", x, y);
 
 		var angle = (2 * Math.PI) / 6000 * 3000;
 		var x = 140 + (140 * Math.cos(angle));
@@ -121,20 +121,20 @@ $( document ).ready(function() {
 		var angle = (2 * Math.PI) / 6000 * 4000;
 		var x = 140 + (140 * Math.cos(angle));
 		var y = 85 + (75 * Math.sin(angle));
-		context.fillText("4km", x, y);
+		context.fillText("2km", x, y);
 
 		var angle = (2 * Math.PI) / 6000 * 5000;
 		var x = 140 + (140 * Math.cos(angle));
 		var y = 85 + (75 * Math.sin(angle));
-		context.fillText("5km", x, y);
+		context.fillText("1km", x, y);
 
 		context.font = "10px Arial";
-		var angle = (2 * Math.PI) / 6000 * 5500;
+		var angle = (2 * Math.PI) / 6000 * 500;
 		var x = 140 + (140 * Math.cos(angle));
 		var y = 85 + (75 * Math.sin(angle));
 		context.fillText("500m", x, y);
 
-		var angle = (2 * Math.PI) / 6000 * 5750;
+		var angle = (2 * Math.PI) / 6000 * 250;
 		var x = 140 + (140 * Math.cos(angle));
 		var y = 85 + (75 * Math.sin(angle));
 		context.fillText("250m", x, y);
@@ -163,7 +163,7 @@ $( document ).ready(function() {
 		// marker.XPos = path[marker.index][0];
 		// marker.YPos = path[marker.index][1];
 		
-		camel_angle += 0.02;
+		camel_angle -= 0.02;
 		redraw();
 	}
 
@@ -191,7 +191,7 @@ $( document ).ready(function() {
       timer = setInterval(update, 550 - slider_val);
 
     }
-    
+
 
 	$("#hit").click(function() {
 	  console.log("stop!");
@@ -236,6 +236,7 @@ $( document ).ready(function() {
 		// speed_slider.slider('setValue', 0);
 		slider_val = 0;
 		$(".speed_btns").removeClass("active");
+		$(".speed_btns").removeClass("flash");
   //       $(".speed_btns").addClass("btn-primary");
 
 	  // }
@@ -263,9 +264,11 @@ $( document ).ready(function() {
       timer2 = setInterval(update2, 500);
 
       $(".speed_btns").removeClass("active");
+      $(".speed_btns").removeClass("flash");
       // $(".speed_btns").addClass("btn-primary");
       // $("#spd1").removeClass("btn-primary");
       $("#spd1").addClass("active");
+      $("#spd1").addClass("flash");
 
 	});
 
@@ -278,9 +281,11 @@ $( document ).ready(function() {
       } 
       timer2 = setInterval(update2, 500);
       $(".speed_btns").removeClass("active");
+      $(".speed_btns").removeClass("flash");
       // $(".speed_btns").addClass("btn-primary");
       // $("#spd2").removeClass("btn-primary");
       $("#spd2").addClass("active");
+      $("#spd2").addClass("flash");
 	});
 
 	$("#spd3").click(function() {
@@ -292,9 +297,11 @@ $( document ).ready(function() {
       } 
       timer2 = setInterval(update2, 500);
       $(".speed_btns").removeClass("active");
+      $(".speed_btns").removeClass("flash");
       // $(".speed_btns").addClass("btn-primary");
       // $("#spd3").removeClass("btn-primary");
       $("#spd3").addClass("active");
+      $("#spd3").addClass("flash");
 	});
 
     setTimeout(redraw, 500);
