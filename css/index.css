@@ -3,8 +3,6 @@ html, body {
     }
 body {
   background-color: #2E5090;
-  /*display:flex;*/
-  /*align-items:center;*/
 }
 
 #main_container{
@@ -12,7 +10,6 @@ body {
   padding: 0px;
   margin: 0px;
   padding-top: 56px;
-  /*padding-bottom: 56px;*/
 }
 
 .card {
@@ -34,7 +31,6 @@ ul {
     align-items: stretch; /* Default */
     justify-content: space-between;
     width: 100%;
-    /*background: #cacaca;*/
     margin: 0;
     padding: 0;
 }
@@ -61,7 +57,6 @@ li {
   display: inline-block;
   float: none;
   padding: 5px;
-  /*border: 1px solid red;*/
 }
 .item_box{
   margin-bottom: 15px;
@@ -129,11 +124,6 @@ li {
   align-items: center;
   border-left: 2px solid rgba(0,0,0,.125)
 }
-
-/*#track_canvas {
-  height: 500px;
-  width: 500px;
-}*/
 
 #ex1Slider .slider-selection {
   background: #BABABA;

@@ -44,7 +44,7 @@ $( document ).ready(function() {
 		// console.log('redrawing');
 		clearCanvas();
 
-		// Old Track
+		// Old Track (keep it commented out unless used)
 		
 		// if(path.length > 0){
 
@@ -64,7 +64,8 @@ $( document ).ready(function() {
 		// }
 		
 
-		// Track
+		// New Track
+		
 		//outer circle
 		context.beginPath();
 		context.ellipse(150, 80, 120, 60, 0, 0, 2 * Math.PI);
@@ -154,15 +155,6 @@ $( document ).ready(function() {
 	}
 
 	function update() {
-		// if(marker.index < path.length - 1){
-		// 	marker.index = marker.index + 1;
-		// }
-		// else{
-		// 	marker.index = 0;
-		// }
-		// marker.XPos = path[marker.index][0];
-		// marker.YPos = path[marker.index][1];
-		
 		camel_angle -= 0.02;
 		redraw();
 	}
@@ -196,50 +188,10 @@ $( document ).ready(function() {
 	$("#hit").click(function() {
 	  console.log("stop!");
 
-	  // if(!hitting){
-	  // 	hitting = true;
-	  // 	$("#hit").text("Stop Hitting");
-	  // 	$("#hit").removeClass("btn-success");
-	  // 	$("#hit").addClass("btn-danger");
-	  // 	if (timer2 != null){
-	  //     	clearInterval(timer2);
-	  //     	timer2 = null;
-	  //   } 
-	  //   timer2 = setInterval(update2, 500);
-	  // }
-	  // else{
-	  // 	hitting = false;
-	  // 	$("#hit").text("Start Hitting");
-	  // 	$("#hit").removeClass("btn-danger");
-	  // 	$("#hit").addClass("btn-success");
-	  	// if (timer !== null){
-	   //    	clearInterval(timer);
-	   //    	timer = null;
-	   //  }
-	   //  if (timer2 != null){
-	   //    	clearInterval(timer2);
-	   //    	timer2 = null;
-	   //  }
-	 //    var slider_val = 0;
-		// var slider_val_final = 0;
-
-		// var bpm = 90 + (slider_val_final/500 * (180-90));
-		// $("#bpm_val").text(Math.round(bpm));
-
-		// var heart_speed = 2.5 - (slider_val_final/500 * 2.3);
-		// $("#heart_img").css("animation-duration", heart_speed + "s");
-		// $(".mobile-detail #heart_img").css("animation-duration", heart_speed + "s");
-
-		// var camel_speed = slider_val_final/500 * 55;
-		// $("#camel_speed").text(Math.round(camel_speed)); 
-
-		// speed_slider.slider('setValue', 0);
 		slider_val = 0;
 		$(".speed_btns").removeClass("active");
 		$(".speed_btns").removeClass("flash");
-  //       $(".speed_btns").addClass("btn-primary");
 
-	  // }
     });
 
     // Slider
@@ -265,8 +217,6 @@ $( document ).ready(function() {
 
       $(".speed_btns").removeClass("active");
       $(".speed_btns").removeClass("flash");
-      // $(".speed_btns").addClass("btn-primary");
-      // $("#spd1").removeClass("btn-primary");
       $("#spd1").addClass("active");
       $("#spd1").addClass("flash");
 
@@ -282,8 +232,6 @@ $( document ).ready(function() {
       timer2 = setInterval(update2, 500);
       $(".speed_btns").removeClass("active");
       $(".speed_btns").removeClass("flash");
-      // $(".speed_btns").addClass("btn-primary");
-      // $("#spd2").removeClass("btn-primary");
       $("#spd2").addClass("active");
       $("#spd2").addClass("flash");
 	});
@@ -298,17 +246,9 @@ $( document ).ready(function() {
       timer2 = setInterval(update2, 500);
       $(".speed_btns").removeClass("active");
       $(".speed_btns").removeClass("flash");
-      // $(".speed_btns").addClass("btn-primary");
-      // $("#spd3").removeClass("btn-primary");
       $("#spd3").addClass("active");
       $("#spd3").addClass("flash");
 	});
 
     setTimeout(redraw, 500);
-
-    
-
-
-
-    
 });
