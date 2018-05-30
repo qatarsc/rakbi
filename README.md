@@ -2,6 +2,9 @@
 
 This is an application demo for the rakbi project, where the user can monitor, locate and control a camel during a race.
 
+[Live Demo](https://qatarsc.github.io/rakbi/)
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
